@@ -1,0 +1,32 @@
+{% set columns = page.header.class == 'small' ? 'is-3' : 'is-4'  %}
+{% set array = [] %}
+
+<section class="section modular-team-member {{ page.header.class}}">
+    {{ content|raw }}
+
+    <div class="columns">
+    {% for member in page.header.members %}
+        <div class="column {{ columns }}">
+        {% if member.url %}<a href="{{member.url}}">{% endif %}
+            <figure class="team-member">
+                <img src="{{ page.media[member.image].url() }}"/>
+            </figure>
+        {% if member.name %}</a>{% endif %}
+            <p class="team-member">{{ member.name }}</p>
+        </div>
+        {% set array = array|merge([{ name: member.name, image: page.media[member.image].url(), text: member.text }]) %}
+    {% endfor %}
+        </div>
+    </div>
+</section>
+<script>
+var members = [
+{% for item in array %}
+    {
+        name: '{{ item.name|raw }}',
+        image: '{{ item.image|raw }}',
+        text: '{{ item.text }}'
+    }
+{% endfor %}
+]
+</script>

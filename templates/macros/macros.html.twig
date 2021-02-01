@@ -1,16 +1,18 @@
 {% macro nav_loop(page) %}
   {% import _self as macros %}
   {% for p in page.children.visible %}
-    {% set active_page = (p.active or p.activeChild) ? 'active' : '' %}
-    <li>
-      <a href="{{ p.url }}" class="{{ active_page }}">
-        {{ p.menu }}
-      </a>
-      {% if p.children.visible.count > 0 %}
-      <ul>
-        {{ macros.nav_loop(p) }}
-      </ul>
+    {% set active_page = (p.active or p.activeChild) ? ' is-active' : '' %}
+      {% if p.children.visible.count == 0 %}
+        <a class="navbar-item is-uppercase{{active_page}}" href="{{p.url}}">
+          {{ p.menu }}
+        </a>
+      {% else %}
+        <div class="navbar-item has-dropdown is-hoverable">
+            <a class="navbar-link is-uppercase">{{ p.menu }}</a>
+            <div class="navbar-dropdown">
+                {{ macros.nav_loop(p) }}
+            </div>
+        </div>
       {% endif %}
-    </li>
   {% endfor %}
 {% endmacro %}

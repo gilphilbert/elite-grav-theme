@@ -1,0 +1,165 @@
+/* GENERIC ITEMS *?
+* 
+  font-family: 'Noto Sans',BlinkMacSystemFont,-apple-system,"Segoe UI",Roboto,Oxygen,Ubuntu,Cantarell,"Fira Sans","Droid Sans","Helvetica Neue",Helvetica,Arial,sans-serif
+  font-size: 19px
+
+html
+  scroll-behavior: smooth
+
+p
+  padding-bottom: 25px
+
+.title
+  font-family: 'Muli',BlinkMacSystemFont,-apple-system,"Segoe UI",Roboto,Oxygen,Ubuntu,Cantarell,"Fira Sans","Droid Sans","Helvetica Neue",Helvetica,Arial,sans-serif
+  font-weight: 700
+  letter-spacing: 0.2em
+  &:after
+    width: 40px
+    height: 3px
+    position: relative
+    top: 9px
+    left: 0
+    background: $primary
+    content: ''
+    display: block
+.has-background-primary .title:after
+  background: $white
+.has-text-centered .title:after
+  left: calc(50% - 20px)
+
+.subtitle
+  font-size: 100%
+
+.button
+  font-size: 115%
+
+section
+  padding: 40px 0
+
+footer 
+  padding: 60px 0 30px 0
+
+/* HELPERS */
+.has-position-relative
+  position: relative
+
+.has-text-white .title,
+.has-text-white .subtitle
+        color: $white
+.columns
+  .column
+    padding: 0.75rem 2rem
+
+.z-index-1
+  z-index: 1
+.z-index-mobile-1
+  @include mobile
+    z-index: 1
+.z-index-2
+  z-index: 2
+
+
+/* SPECIFIC STYLING */
+.navbar 
+  @include from($tablet)
+    min-height: 100px
+  .navbar-brand
+    font-size: 1.5em
+    letter-spacing: 2px
+    .navbar-item img
+      max-height: none
+      margin-right: 10px
+      height: 80px
+      width: 80px
+      @include mobile
+        height: 40px
+        width: 50px
+  .navbar-item, .navbar-link
+    font-size: .9em
+    font-family: 'Muli',BlinkMacSystemFont,-apple-system,"Segoe UI",Roboto,Oxygen,Ubuntu,Cantarell,"Fira Sans","Droid Sans","Helvetica Neue",Helvetica,Arial,sans-serif
+  .navbar-dropdown .navbar-item
+    font-size: 1em
+
+section
+  &.has-half-image 
+    background-size: 50%
+    background-repeat: no-repeat
+    @include mobile
+      background-image: none!important
+  &.hero
+    background-image: url(../img/hero.jpg)
+    height: calc(100vh - 100px)
+    background-size: cover
+    background-position: center
+    .hero-body
+      display: flex
+      align-items: center
+    .title
+      font-family: 'Destroy'
+      font-size: 80px
+      margin-bottom: 60px
+      @include mobile
+        font-size: 35px
+    .title:after
+      display: none
+    .subtitle
+      font-size: 45px
+      letter-spacing: 8px
+      margin-bottom: 50px
+      @include mobile
+        font-size: 25px
+        letter-spacing: 3px
+    .button
+      margin-bottom: 3px
+  &.has-wide-margins 
+    padding: 80px 0
+  &.has-extra-wide-margins 
+    padding: 100px 0
+
+#video-sash
+  height: 280px
+  video
+    @include from($tablet)
+      position: absolute
+      top: -70px
+      left: calc(50% - 320px)
+      -webkit-box-shadow: 0px 0px 35px 0px rgba(0,0,0,0.8)
+      -moz-box-shadow: 0px 0px 35px 0px rgba(0,0,0,0.8)
+      box-shadow: 0px 0px 35px 0px rgba(0,0,0,0.8)
+
+.has-background-logo-simplified
+  background-image: url(../img/logo-simplified.svg)
+  background-repeat: no-repeat
+  background-size: 30%
+  background-position: center
+
+.image
+  &.is-400x400 img
+    max-height: 450px
+    max-width: 450px
+  &.is-bottom-50 
+    position: absolute
+    bottom: 0
+    left: calc(50% + 100px)
+    @include mobile
+      width: 80%
+      right: 0
+      left: auto
+
+footer
+  .field
+    &.has-addons
+      justify-content: center
+      margin-bottom: 80px
+
+    .control input
+      background-color: #4C4C4C
+      border: none
+      color: white
+      font-size: 115%
+
+
+h3.title 
+  letter-spacing: 0
+  font-weight: 400
+  font-size: 28px

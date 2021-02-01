@@ -1,4 +1,3 @@
-{% set body_classes = body_class(['header-fixed', 'header-animated', 'header-dark', 'header-transparent', 'sticky-footer']) %}
 {% set grid_size = theme_var('grid-size') %}
 {% set compress = theme_var('production-mode') ? '.min.css' : '.css' %}
 {% use 'blocks/base.html.twig' %}
@@ -11,25 +10,51 @@
 
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    {% include 'partials/metadata.html.twig' %}
+    <meta property="og:image" content="/img/video-preview.jpg">
+    <meta property="og:image:type" content="image/png">
+    <meta property="og:image:width" content="859">
+    <meta property="og:image:height" content="483">
 
     <link rel="icon" type="image/png" href="{{ url('theme://images/favicon.png') }}" />
     <link rel="canonical" href="{{ page.url(true, true) }}" />
 {% endblock head %}
 
 {% block stylesheets %}
-    {% do assets.addCss('theme://css-compiled/spectre'~compress) %}
-    {% if theme_var('spectre.exp') %}{% do assets.addCss('theme://css-compiled/spectre-exp'~compress)  %}{% endif %}
-    {% if theme_var('spectre.icons') %}{%  do assets.addCss('theme://css-compiled/spectre-icons'~compress) %}{% endif %}
-    {% do assets.addCss('theme://css-compiled/theme'~compress) %}
-    {% do assets.addCss('theme://css/custom.css') %}
-    {% do assets.addCss('theme://css/line-awesome.min.css') %}
+    {# {% do assets.addCss('theme://css-compiled/spectre'~compress) %} #}
+    {# {% if theme_var('spectre.exp') %}{% do assets.addCss('theme://css-compiled/spectre-exp'~compress)  %}{% endif %} #}
+    {% do assets.addCss('theme://css/spartans.css') %}
+    {% do assets.addCss('https://fonts.googleapis.com/css?family=Muli:700,400|Noto+Sans&display=swap') %}
+    {% do assets.addCss('theme://fonts/destroy.css') %}
+
 {% endblock %}
 
+<style>
+    .navbar.is-dark .navbar-end .navbar-link.is-active,
+    .navbar.is-dark .navbar-end>a.navbar-item.is-active,
+    .navbar.is-dark .navbar-start .navbar-link.is-active,
+    .navbar.is-dark .navbar-start>a.navbar-item.is-active {
+    color: #F45200;
+    background: transparent;
+    }
+    .navbar.is-dark .navbar-end .navbar-link:focus,
+    .navbar.is-dark .navbar-end .navbar-link:hover,
+    .navbar.is-dark .navbar-end>a.navbar-item:focus,
+    .navbar.is-dark .navbar-end>a.navbar-item:hover,
+    .navbar.is-dark .navbar-start .navbar-link:focus,
+    .navbar.is-dark .navbar-start .navbar-link:hover,
+    .navbar.is-dark .navbar-start>a.navbar-item:focus,
+    .navbar.is-dark .navbar-start>a.navbar-item:hover {
+    background: transparent;
+    color: #F45200;
+    }
+    .navbar.is-dark .navbar-item.has-dropdown.is-active .navbar-link, .navbar.is-dark .navbar-item.has-dropdown:focus .navbar-link, .navbar.is-dark .navbar-item.has-dropdown:hover .navbar-link {
+    background: transparent;
+    color: #F45200;
+    }
+</style>
+
 {% block javascripts %}
-    {% do assets.addJs('jquery', 101) %}
-    {% do assets.addJs('theme://js/jquery.treemenu.js', {group:'bottom'}) %}
-    {% do assets.addJs('theme://js/site.js', {group:'bottom'}) %}
+    {% do assets.addJs('theme://js/spartans.js', {group:'bottom'}) %}
 {% endblock %}
 
 {% block assets deferred %}
@@ -37,10 +62,10 @@
     {{ assets.js()|raw }}
 {% endblock %}
 </head>
-<body id="top" class="{% block body_classes %}{{ body_classes }}{% endblock %}">
-    <div id="page-wrapper">
-    {% block header %}
-        <section id="header" class="section">
+<body>
+{% block header %}
+{#
+    <section id="nav">
             <section class="container {{ grid_size }}">
                 <nav class="navbar">
                     <section class="navbar-section logo">
@@ -48,11 +73,6 @@
                     </section>
                     <section class="navbar-section desktop-menu">
 
-                        <nav class="dropmenu animated">
-                        {% block header_navigation %}
-                            {% include 'partials/navigation.html.twig' %}
-                        {% endblock %}
-                        </nav>
 
                         {% if config.plugins.login.enabled and grav.user.username %}
                             <span class="login-status-wrapper"><i class="fa fa-user"></i> {% include 'partials/login-status.html.twig' %}</span>
@@ -61,7 +81,7 @@
                     </section>
                 </nav>
             </section>
-        </section>
+    </section>
         <div class="mobile-menu">
             <div class="button_container" id="toggle">
                 <span class="top"></span>
@@ -69,41 +89,52 @@
                 <span class="bottom"></span>
             </div>
         </div>
-    {% endblock %}
+        #}
+    <nav class="navbar has-background-black is-dark" role="navigation" aria-label="main navigation">
+        <div class="container">
+            <div class="navbar-brand">
+                <a class="navbar-item is-uppercase" href="/">
+                    <img src="{{ url('theme://images/logo.svg') }}" width="80" height="80">
+                    <span class="is-hidden-mobile">Elite Spartans</span>
+                </a>
 
-    {% block hero %}{% endblock %}
-
-        <section id="start">
-        {% block body %}
-            <section id="body-wrapper" class="section">
-                <section class="container {{ grid_size }}">
-                    {% block messages %}
-                        {% include 'partials/messages.html.twig' ignore missing %}
-                    {% endblock %}
-                    {{ block('content_surround') }}
-                </section>
-            </section>
-        {% endblock %}
-        </section>
-
-    </div>
-
-    {% block footer %}
-        {% include 'partials/footer.html.twig' %}
-    {% endblock %}
-
-    {% block mobile %}
-    <div class="mobile-container">
-        <div class="overlay" id="overlay">
-            <div class="mobile-logo">
-                {% include 'partials/logo.html.twig' with {mobile: true} %}
+                <a role="button" class="navbar-burger burger" aria-label="menu" aria-expanded="false" data-target="main-nav">
+                    <span aria-hidden="true"></span>
+                    <span aria-hidden="true"></span>
+                    <span aria-hidden="true"></span>
+                </a>
             </div>
-            <nav class="overlay-menu">
-                {% include 'partials/navigation.html.twig' with {tree: true} %}
-            </nav>
+            <div id="main-nav" class="navbar-menu">
+                <div class="navbar-end">
+                    {% block header_navigation %}
+                        {% include 'partials/navigation.html.twig' %}
+                    {% endblock %}
+                </div>
+            </div>
         </div>
-    </div>
-    {% endblock %}
+    </nav>
+{% endblock %}
+
+{% block hero %}{% endblock %}
+
+{% block body %}
+    <section class="has-extra-wide-margins">
+        <div class="container">
+            <div class="columns">
+                <div class="column is-12">
+                {% block messages %}
+                    {% include 'partials/messages.html.twig' ignore missing %}
+                {% endblock %}
+                {{ block('content_surround') }}
+                </div>
+            </div>
+        </div>
+    </section>
+{% endblock %}
+
+{% block footer %}
+    {% include 'partials/footer.html.twig' %}
+{% endblock %}
 
 {% block bottom %}
     {{ assets.js('bottom')|raw }}

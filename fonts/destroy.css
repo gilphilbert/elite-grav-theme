@@ -1,0 +1,7 @@
+@font-face {
+    font-family: 'Destroy';
+    src: url('Destroy.woff2') format('woff2'),
+         url('Destroy.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
