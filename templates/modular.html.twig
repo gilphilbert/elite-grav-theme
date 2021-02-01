@@ -8,6 +8,7 @@
 {% endblock %}
 
 {% block body %}
+{% if page.content %}
     <section class="has-extra-wide-margins">
         <div class="container">
             <div class="columns">
@@ -15,10 +16,11 @@
                     {{ page.content|raw }}
                 </div>
             </div>
+        </div>
+    </section>
+{% endif %}
             {% for module in page.collection() if module.template != 'modular/hero' %}
                 <div id="{{ module.menu|hyphenize }}"></div>
                 {{ module.content|raw }}
             {% endfor %}
-        </div>
-    </section>
 {% endblock %}

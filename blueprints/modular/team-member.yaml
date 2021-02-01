@@ -18,10 +18,10 @@ form:
                 small: Small   = 4 / 3 / 2 columns
                 standard: Standard  = 3 / 2 / 1 columns
 
-            header.members:
+            header.team_management:
               name: members
               type: list
-              label: Members
+              label: Management
 
               fields:
                 .image:
@@ -36,8 +36,64 @@ form:
                 .text:
                   type: text
                   label: Text
-                .type:
-                  type: SelectUnique
-                  label: Type
-                  items:
+                    
+            header.team_marketing:
+              name: members
+              type: list
+              label: Marketing
+
+              fields:
+                .image:
+                  type: pagemediaselect
+                  label: Photo
+                .name:
+                  type: text
+                  label: Name
+                .quote:
+                  type: text
+                  label: Quote
+                .text:
+                  type: text
+                  label: Text
+                    
+                    
+            header.team_coaches:
+              name: members
+              type: list
+              label: Coaches
+
+              fields:
+                .image:
+                  type: pagemediaselect
+                  label: Photo
+                .name:
+                  type: text
+                  label: Name
+                .quote:
+                  type: text
+                  label: Quote
+                .text:
+                  type: text
+                  label: Text
+                    
+                    
+                    
+            header.team_fontdesk:
+              name: members
+              type: list
+              label: Front Desk
+
+              fields:
+                .image:
+                  type: pagemediaselect
+                  label: Photo
+                .name:
+                  type: text
+                  label: Name
+                .quote:
+                  type: text
+                  label: Quote
+                .text:
+                  type: text
+                  label: Text
                     

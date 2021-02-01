@@ -1,3 +1,8 @@
+{% set phone = theme_var('contact_phone') %}
+{% set email = theme_var('contact_email') %}
+{% set address = theme_var('contact_address')|markdown %}
+{% set hours = theme_var('contact_hours')|markdown %}
+
     <footer class="has-background-black has-text-white">
       <div class="container">
         <div class="columns">
@@ -21,22 +26,18 @@
                 <h2 class="title is-uppercase">Elite spartans</h2>
               </div>
               <div class="column">
-                <p><a href="tel:4086247479">(408) 624-7479</a></p>
-                <p><a href="mailto:azuniga@elitespartans.com">azuniga@elitespartans.com</a></p>
-                <p>3278 Almaden Expressway<br>San Jose<br>CA 95118</p>
+                <p><a href="tel:{{ phone }}">{{ phone }}</a></p>
+                <p><a href="mailto:{{ email }}">{{ email }}</a></p>
+                {{ address|raw }}
               </div>
               <div class="column">
-                <p>Monday - Friday<br>5:00am - 9:00pm</p>
-                <p>Saturday - Sunday<br>7:00am - 2:00pm</p>
+                {{ hours|raw }}
               </div>
               <div class="column">
                 <ul>
-                  <li><a href="Home">Home</a></li>
-                  <li><a href="About">About</a></li>
-                  <li><a href="Services">Services</a></li>
-                  <li><a href="Testimonials">Testimonials</a></li>
-                  <li><a href="Schedule">Schedule</a></li>
-                  <li><a href="Contacts">Contacts</a></li>
+                {% for page in pages.children.visible %}
+                  <li><a href="{{ page.url }}">{{ page.menu }}</a></li>
+                {% endfor %}
                 </ul>
               </div>
             </div>

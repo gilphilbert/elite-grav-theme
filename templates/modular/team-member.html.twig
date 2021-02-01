@@ -1,12 +1,15 @@
-{% set columns = page.header.class == 'small' ? 'is-3' : 'is-4'  %}
+{% set columns = page.header.class == 'small' ? 'is-2' : 'is-4'  %}
 {% set array = [] %}
 
-<section class="section modular-team-member {{ page.header.class}}">
+<div class="container">
+<section class="section modular-team-member has-text-centered {{ page.header.class}}">
+    <h1 class="title is-uppercase no-border">{{ page.header.title }}</h1>
     {{ content|raw }}
 
+    <h3 class="title is-uppercase no-border">Management</h2>
     <div class="columns">
-    {% for member in page.header.members %}
-        <div class="column {{ columns }}">
+    {% for member in page.header.team_management %}
+        <div class="column {{ columns }} is-6-mobile">
         {% if member.url %}<a href="{{member.url}}">{% endif %}
             <figure class="team-member">
                 <img src="{{ page.media[member.image].url() }}"/>
@@ -16,9 +19,54 @@
         </div>
         {% set array = array|merge([{ name: member.name, image: page.media[member.image].url(), text: member.text }]) %}
     {% endfor %}
+    </div>
+
+    <h3 class="title is-uppercase no-border">Marketing</h3>
+    <div class="columns">
+    {% for member in page.header.team_marketing %}
+        <div class="column {{ columns }} is-6-mobile">
+        {% if member.url %}<a href="{{member.url}}">{% endif %}
+            <figure class="team-member">
+                <img src="{{ page.media[member.image].url() }}"/>
+            </figure>
+        {% if member.name %}</a>{% endif %}
+            <p class="team-member">{{ member.name }}</p>
         </div>
+        {% set array = array|merge([{ name: member.name, image: page.media[member.image].url(), text: member.text }]) %}
+    {% endfor %}
+    </div>
+
+    <h3 class="title is-uppercase no-border">Coaches</h3>
+    <div class="columns">
+    {% for member in page.header.team_coaches %}
+        <div class="column {{ columns }} is-6-mobile">
+        {% if member.url %}<a href="{{member.url}}">{% endif %}
+            <figure class="team-member">
+                <img src="{{ page.media[member.image].url() }}"/>
+            </figure>
+        {% if member.name %}</a>{% endif %}
+            <p class="team-member">{{ member.name }}</p>
+        </div>
+        {% set array = array|merge([{ name: member.name, image: page.media[member.image].url(), text: member.text }]) %}
+    {% endfor %}
+    </div>
+
+    <h3 class="title is-uppercase no-border">Front Desk</h3>
+    <div class="columns">
+    {% for member in page.header.team_frontdesk %}
+        <div class="column {{ columns }} is-6-mobile">
+        {% if member.url %}<a href="{{member.url}}">{% endif %}
+            <figure class="team-member">
+                <img src="{{ page.media[member.image].url() }}"/>
+            </figure>
+        {% if member.name %}</a>{% endif %}
+            <p class="team-member">{{ member.name }}</p>
+        </div>
+        {% set array = array|merge([{ name: member.name, image: page.media[member.image].url(), text: member.text }]) %}
+    {% endfor %}
     </div>
 </section>
+</div>
 <script>
 var members = [
 {% for item in array %}

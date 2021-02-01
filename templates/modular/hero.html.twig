@@ -1,4 +1,17 @@
-{% set grid_size = theme_var('grid-size') %}
-{% set hero_image = page.header.hero_image ? page.media[page.header.hero_image] : page.media.images|first %}
-
-{% include 'partials/hero.html.twig' %}
+<section class="hero is-primary" style="background-image: url({{ page.media[page.header.hero_background].url() }})">
+    <div class="hero-body">
+    <div class="container">
+        <div class="columns">
+        <div class="column is-8">
+            <h2 class="subtitle is-uppercase">{{ page.header.hero_subtitle }}</h2>
+            <h1 class="title is-uppercase">{{ page.header.hero_title }}</h1>
+            <p>{{ page.header.hero_text }}</p>
+            <button class="button is-rounded is-outlined is-white" onclick="scrollToAnchor('section-1')">Learn more</button>
+            &nbsp;
+            <button class="button is-rounded is-outlined is-primary">Book now!</button>
+        </div>
+        </div>
+    </div>
+    </div>
+</section>
+<div id="section-1"></div>

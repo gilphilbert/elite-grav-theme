@@ -1,0 +1,17 @@
+{% set page_class = page.header.banner_background|default("white") %}
+{% if page_class == "white" %}
+    {% set page_text = "black" %}
+{% else %}
+    {% set page_text = "white" %}
+{% endif %}
+    <section class="has-background-{{ page_class }} has-text-centered has-text-{{ page_text }}">
+      <div class="container">
+        <div class="columns">
+          <div class="column">
+            <h1 class="title is-uppercase no-border">{{ page.header.banner_title }}</h1>
+            <p>{{ page.header.banner_text }}</p>
+            <button class="button is-rounded is-white">Hit me up!</button>
+          </div>
+        </div>
+      </div>
+    </section>

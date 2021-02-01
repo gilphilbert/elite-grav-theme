@@ -1,0 +1,28 @@
+title: Banner
+'@extends': default
+
+form:
+  fields:
+    tabs:
+      fields:
+        buttons:
+          type: tab
+          title: Banner
+          fields:
+            header.banner_title:
+              type: text
+              label: Title
+              markdown: false
+              description: The main title
+            header.banner_text:
+              type: text
+              label: Text
+              markdown: false
+              description: The body of text
+            header.banner_background:
+              type: text
+              label: Background
+              markdown: false
+              description: Background color (choose 'primary', 'black', or 'white')
+
+

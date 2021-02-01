@@ -1,0 +1,34 @@
+    <section class="has-text-centered"> 
+      <div class="container">
+        <div class="columns is-multiline">
+          <div class="column is-full">
+            <h1 class="title is-uppercase">{{ page.header.items_title }}</h1>
+            <p>{{ page.header.items_subtitle }}</p>
+          </div>
+          <div class="column is-4">
+            <figure class="image is-96x96 is-inline-block">
+              <img src="{{ page.media[page.header.items_1_image].url() }}" />
+            </figure>
+            <h3 class="title">{{ page.header.items_1_title }}</h3>
+            <p>{{ page.header.items_1_subtitle }}</p>
+          </div>
+          <div class="column is-4">
+            <figure class="image is-96x96 is-inline-block">
+              <img src="{{ page.media[page.header.items_2_image].url() }}" />
+            </figure>
+            <h3 class="title">{{ page.header.items_2_title }}</h3>
+            <p>{{ page.header.items_2_subtitle }}</p>
+          </div>
+          <div class="column is-4">
+            <figure class="image is-96x96 is-inline-block">
+              <img src="{{ page.media[page.header.items_3_image].url() }}" />
+            </figure>
+            <h3 class="title">{{ page.header.items_3_title }}</h3>
+            <p>{{ page.header.items_3_subtitle }}</p>
+          </div>
+          <div class="column is-full">
+            <button class="button floating is-rounded is-primary">Learn more</button>
+          </div>
+        </div>
+      </div>
+    </section>
