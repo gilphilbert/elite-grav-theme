@@ -1,3 +1,13 @@
+{% extends 'partials/base.html.twig' %}
+
+{% block hero %}
+    {% for module in page.collection() if module.template == 'modular/hero' %}
+        <div id="{{ module.menu|hyphenize }}"></div>
+        {{ module.content|raw }}
+    {% endfor %}
+{% endblock %}
+
+{% block body %}
 {% set columns = page.header.class == 'small' ? 'is-2' : 'is-4'  %}
 {% set array = [] %}
 
@@ -183,3 +193,4 @@ window.addEventListener("DOMContentLoaded", function() {
   </div>
   <button class="modal-close is-large" aria-label="close" onClick="document.getElementById('person-modal').classList.remove('is-active')"></button>
 </div>
+{% endblock %}

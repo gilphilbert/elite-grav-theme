@@ -1,3 +1,13 @@
+{% extends 'partials/base.html.twig' %}
+
+{% block hero %}
+    {% for module in page.collection() if module.template == 'modular/hero' %}
+        <div id="{{ module.menu|hyphenize }}"></div>
+        {{ module.content|raw }}
+    {% endfor %}
+{% endblock %}
+
+{% block body %}
 <div class="container">
     <section class="section modular-testimonial has-text-centered {{ page.header.class}}">
         <h1 class="title is-uppercase no-border">{{ page.header.title }}</h1>
@@ -45,3 +55,4 @@
         })
     }, false);
 </script>
+{% endblock %}
