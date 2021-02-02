@@ -27,14 +27,14 @@ form:
                 .image:
                   type: pagemediaselect
                   label: Photo
+                .thumb:
+                  type: pagemediaselect
+                  label: Thumbnail
                 .name:
                   type: text
                   label: Name
-                .quote:
-                  type: text
-                  label: Quote
                 .text:
-                  type: text
+                  type: markdown
                   label: Text
                     
             header.team_marketing:
@@ -46,14 +46,14 @@ form:
                 .image:
                   type: pagemediaselect
                   label: Photo
+                .thumb:
+                  type: pagemediaselect
+                  label: Thumbnail
                 .name:
                   type: text
                   label: Name
-                .quote:
-                  type: text
-                  label: Quote
                 .text:
-                  type: text
+                  type: markdown
                   label: Text
                     
                     
@@ -66,14 +66,14 @@ form:
                 .image:
                   type: pagemediaselect
                   label: Photo
+                .thumb:
+                  type: pagemediaselect
+                  label: Thumbnail
                 .name:
                   type: text
                   label: Name
-                .quote:
-                  type: text
-                  label: Quote
                 .text:
-                  type: text
+                  type: markdown
                   label: Text
                     
                     
@@ -87,13 +87,13 @@ form:
                 .image:
                   type: pagemediaselect
                   label: Photo
+                .thumb:
+                  type: pagemediaselect
+                  label: Thumbnail
                 .name:
                   type: text
                   label: Name
-                .quote:
-                  type: text
-                  label: Quote
                 .text:
-                  type: text
+                  type: markdown
                   label: Text
                     

@@ -8,73 +8,178 @@
 
     <h3 class="title is-uppercase no-border">Management</h2>
     <div class="columns">
+
+    {% set offset_position = 1 %}
+    {% set rows = 0 %}
+    {% set cols = 0 %}
+    {% for i in 1..page.header.team_management|length %}
+        {% if cols == 6 %}
+            {% set cols = 1 %}
+            {% set rows = rows + 1 %}
+        {% else %}
+            {% set cols = cols + 1 %}
+        {% endif %}
+    {% endfor %}
+    {% set offset = 6 - cols %}
+    {% set offset_pos = (rows * 6) + 1 %}
+
     {% for member in page.header.team_management %}
-        <div class="column {{ columns }} is-6-mobile">
+        {% set this_offset = '' %}
+        {% if loop.index == offset_pos %}
+            {% set this_offset = ' is-offset-' ~ offset %}
+        {% endif %}
+        <div class="column {{ columns }} is-6-mobile{{ this_offset }} person" data-name="{{ member.name }}">
         {% if member.url %}<a href="{{member.url}}">{% endif %}
             <figure class="team-member">
-                <img src="{{ page.media[member.image].url() }}"/>
+                <img src="{{ page.media[member.thumb].url() }}"/>
             </figure>
         {% if member.name %}</a>{% endif %}
             <p class="team-member">{{ member.name }}</p>
         </div>
-        {% set array = array|merge([{ name: member.name, image: page.media[member.image].url(), text: member.text }]) %}
+        {% set array = array|merge([{ name: member.name, thumb: page.media[member.thumb].url(), image: page.media[member.image].url(), text: member.text }]) %}
     {% endfor %}
     </div>
 
     <h3 class="title is-uppercase no-border">Marketing</h3>
     <div class="columns">
+
+    {% set offset_position = 1 %}
+    {% set rows = 0 %}
+    {% set cols = 0 %}
+    {% for i in 1..page.header.team_marketing|length %}
+        {% if cols == 6 %}
+            {% set cols = 1 %}
+            {% set rows = rows + 1 %}
+        {% else %}
+            {% set cols = cols + 1 %}
+        {% endif %}
+    {% endfor %}
+    {% set offset = 6 - cols %}
+    {% set offset_pos = (rows * 6) + 1 %}
+
     {% for member in page.header.team_marketing %}
-        <div class="column {{ columns }} is-6-mobile">
+        {% set this_offset = '' %}
+        {% if loop.index == offset_pos %}
+            {% set this_offset = ' is-offset-' ~ offset %}
+        {% endif %}
+        <div class="column {{ columns }} is-6-mobile{{ this_offset }} person" data-name="{{ member.name }}">
         {% if member.url %}<a href="{{member.url}}">{% endif %}
             <figure class="team-member">
-                <img src="{{ page.media[member.image].url() }}"/>
+                <img src="{{ page.media[member.thumb].url() }}"/>
             </figure>
         {% if member.name %}</a>{% endif %}
             <p class="team-member">{{ member.name }}</p>
         </div>
-        {% set array = array|merge([{ name: member.name, image: page.media[member.image].url(), text: member.text }]) %}
+        {% set array = array|merge([{ name: member.name, thumb: page.media[member.thumb].url(), image: page.media[member.image].url(), text: member.text }]) %}
     {% endfor %}
     </div>
 
     <h3 class="title is-uppercase no-border">Coaches</h3>
     <div class="columns">
+
+    {% set offset_position = 1 %}
+    {% set rows = 0 %}
+    {% set cols = 0 %}
+    {% for i in 1..page.header.team_coaches|length %}
+        {% if cols == 6 %}
+            {% set cols = 1 %}
+            {% set rows = rows + 1 %}
+        {% else %}
+            {% set cols = cols + 1 %}
+        {% endif %}
+    {% endfor %}
+    {% set offset = 6 - cols %}
+    {% set offset_pos = (rows * 6) + 1 %}
+
     {% for member in page.header.team_coaches %}
-        <div class="column {{ columns }} is-6-mobile">
+        {% set this_offset = '' %}
+        {% if loop.index == offset_pos %}
+            {% set this_offset = ' is-offset-' ~ offset %}
+        {% endif %}
+        <div class="column {{ columns }} is-6-mobile{{ this_offset }} person" data-name="{{ member.name }}">
         {% if member.url %}<a href="{{member.url}}">{% endif %}
             <figure class="team-member">
-                <img src="{{ page.media[member.image].url() }}"/>
+                <img src="{{ page.media[member.thumb].url() }}"/>
             </figure>
         {% if member.name %}</a>{% endif %}
             <p class="team-member">{{ member.name }}</p>
         </div>
-        {% set array = array|merge([{ name: member.name, image: page.media[member.image].url(), text: member.text }]) %}
+        {% set array = array|merge([{ name: member.name, thumb: page.media[member.thumb].url(), image: page.media[member.image].url(), text: member.text }]) %}
     {% endfor %}
     </div>
 
     <h3 class="title is-uppercase no-border">Front Desk</h3>
     <div class="columns">
+
+    {% set offset_position = 1 %}
+    {% set rows = 0 %}
+    {% set cols = 0 %}
+    {% for i in 1..page.header.team_frontdesk|length %}
+        {% if cols == 6 %}
+            {% set cols = 1 %}
+            {% set rows = rows + 1 %}
+        {% else %}
+            {% set cols = cols + 1 %}
+        {% endif %}
+    {% endfor %}
+    {% set offset = 6 - cols %}
+    {% set offset_pos = (rows * 6) + 1 %}
+
     {% for member in page.header.team_frontdesk %}
-        <div class="column {{ columns }} is-6-mobile">
+        {% set this_offset = '' %}
+        {% if loop.index == offset_pos %}
+            {% set this_offset = ' is-offset-' ~ offset %}
+        {% endif %}
+        <div class="column {{ columns }} is-6-mobile{{ this_offset }} person" data-name="{{ member.name }}">
         {% if member.url %}<a href="{{member.url}}">{% endif %}
             <figure class="team-member">
-                <img src="{{ page.media[member.image].url() }}"/>
+                <img src="{{ page.media[member.thumb].url() }}"/>
             </figure>
         {% if member.name %}</a>{% endif %}
             <p class="team-member">{{ member.name }}</p>
         </div>
-        {% set array = array|merge([{ name: member.name, image: page.media[member.image].url(), text: member.text }]) %}
+        {% set array = array|merge([{ name: member.name, thumb: page.media[member.thumb].url(), image: page.media[member.image].url(), text: member.text|markdown }]) %}
     {% endfor %}
     </div>
 </section>
 </div>
 <script>
-var members = [
+window.members = {
 {% for item in array %}
-    {
+    '{{ item.name|raw }}': {
         name: '{{ item.name|raw }}',
-        image: '{{ item.image|raw }}',
-        text: '{{ item.text }}'
-    }
+        thumb: '{{ item.thumb|raw }}',
+        image: '{{ item.image| raw }}',
+        text: `{{ item.text|markdown }}`
+    },
 {% endfor %}
-]
+}
+window.addEventListener("DOMContentLoaded", function() {
+    document.body.querySelectorAll('.person').forEach(el => {
+        el.addEventListener('click', (e) => {
+            var id = e.target.closest('.person').dataset.name
+            const person = window.members[id]
+            const mod = document.getElementById('person-modal')
+            mod.querySelector('img').src = person.image
+            mod.querySelector('h2').innerText = person.name
+            mod.querySelector('.text').innerHTML = person.text
+            mod.classList.add('is-active')
+        })
+    })
+    
+}, false)
 </script>
+
+<div class="modal" id="person-modal">
+  <div class="modal-background"></div>
+  <div class="modal-content has-background-white has-text-black">
+        <figure>
+            <img>
+        </figure>
+        <div class="text-container">
+            <h2 class="title is-uppercase no-border has-text-black"></h2>
+            <div class="text"></div>
+        </div>
+  </div>
+  <button class="modal-close is-large" aria-label="close" onClick="document.getElementById('person-modal').classList.remove('is-active')"></button>
+</div>

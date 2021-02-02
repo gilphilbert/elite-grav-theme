@@ -1,0 +1,47 @@
+<div class="container">
+    <section class="section modular-testimonial has-text-centered {{ page.header.class}}">
+        <h1 class="title is-uppercase no-border">{{ page.header.title }}</h1>
+        {{ content|raw }}
+
+        {% if page.header.videos|length > 0 %}
+        <div class="columns">
+            {% for t in page.header.videos %}  
+                <div class="column is-6 ">
+                    <h2>{{ t.name }}</h2>
+                    <div class="video-container">
+                        <embed src="https://www.youtube.com/embed/{{ t.video }}" wmode="transparent" type="video/mp4" allow="autoplay; encrypted-media; picture-in-picture" allowfullscreen>
+                    </div>
+                </div>
+            {% endfor %}
+        </div>
+        {% endif %}
+
+        {% if page.header.texts|length > 0 %}
+        <div class="columns">
+            {% for t in page.header.texts %}
+                <div class="column is-4">
+                    <div class="box has-background-primary has-text-white">
+                        <figure class="testimonial">
+                            <img src="{{ page.media[t.image].url() }}"/>
+                        </figure>
+                        <div class="text clip">
+                            {{ t.text|markdown }}
+                        </div>
+                        <button class="button is-small is-rounded is-white is-medium">Read more</button>
+                        <h2 class="">{{ t.name }}</h2>
+                    </div>
+                </div>
+            {% endfor %}
+        </div>
+        {% endif %}
+    </section>
+</div>
+<script>
+    window.addEventListener("DOMContentLoaded", function() {
+        document.body.querySelectorAll('.modular-testimonial .button').forEach(el => {
+            el.addEventListener('click', (e) => {
+                e.target.closest('div').querySelector('.text').classList.toggle('clip')
+            })
+        })
+    }, false);
+</script>

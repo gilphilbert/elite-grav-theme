@@ -19,6 +19,19 @@ form:
               label: Text
               markdown: false
               description: The body of text
+            header.button_text:
+              type: text
+              label: Button text
+              markdown: false
+              description: The button text
+            header.button_url:
+              type: pages
+              label: Button destination
+              markdown: false
+              show_modular: false
+              show_all: false
+              show_root: false
+              description: Where clicking the button takes you
             header.banner_background:
               type: text
               label: Background

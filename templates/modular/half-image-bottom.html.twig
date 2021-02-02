@@ -1,0 +1,22 @@
+{% set page_class = page.header.banner_background|default("black") %}
+{% if page_class == "white" %}
+    {% set page_text = "black" %}
+{% else %}
+    {% set page_text = "white" %}
+{% endif %}
+    <section class="has-background-{{ page_class }} has-text-{{ page_text }} has-extra-wide-margins has-position-relative">
+      <figure class="image is-400x400 is-bottom-50 z-index-1">
+        <img src="{{ page.media[page.header.half_image].url() }}" />
+      </figure>
+      <div class="container z-index-mobile-1">
+        <div class="columns">
+          <div class="column is-5">
+            <h1 class="title is-uppercase">
+              {{ page.header.half_title }}
+            </h1>
+              {{ page.header.half_text|markdown }}
+          </div>
+          <div class="column is-6 is-hidden-mobile is-offset-1"></div>
+        </div>
+      </div>
+    </section>

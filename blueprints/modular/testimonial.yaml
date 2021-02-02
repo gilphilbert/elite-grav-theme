@@ -1,0 +1,39 @@
+title: Testimonials
+'@extends': default
+
+form:
+  fields:
+    tabs:
+      fields:
+        members:
+          type: tab
+          title: Testimonials
+          fields:
+            header.videos:
+              name: members
+              type: list
+              label: Video Testimonials
+
+              fields:
+                .name:
+                  type: text
+                  label: Name
+                .video:
+                  type: text
+                  label: YouTube video ID (e.g., https://www.youtube.com/watch?v=rrNM-ylgUnk becomes rrNM-ylgUnk)
+                    
+            header.texts:
+              name: text
+              type: list
+              label: Text testimonials
+
+              fields:
+                .name:
+                  type: text
+                  label: Name
+                .image:
+                  type: pagemediaselect
+                  label: Picture
+                .text:
+                  type: markdown
+                  label: Text

@@ -1,0 +1,34 @@
+title: Third Image
+'@extends': default
+
+form:
+  fields:
+    tabs:
+      fields:
+        buttons:
+          type: tab
+          title: Third Image
+          fields:
+            header.half_title:
+              type: text
+              label: Title
+              markdown: false
+              description: 'The main title'
+            header.half_text:
+              type: markdown
+              label: Text
+              markdown: true
+              description: 'The body of text'
+            header.half_image:
+              type: pagemediaselect
+              label: Image
+              preview_images: true
+              description: 'The image for the side'
+            header.half_button_text:
+              type: text
+              label: Button text
+              description: 'The button text'
+            header.half_button_url:
+              type: pages
+              label: Button links to
+              description: 'Where clicking the button takes you'

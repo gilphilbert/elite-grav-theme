@@ -1,0 +1,18 @@
+    <section class="has-extra-wide-margins">
+      <div class="container">
+        <div class="columns">
+          <div class="column is-3 is-offset-1">
+            <figure class="image">
+              <img src="{{ page.media[page.header.half_image].url() }}" />
+            </figure>
+          </div>
+          <div class="column is-7">
+            <h1 class="title is-uppercase">
+              {{ page.header.half_title }}
+            </h1>
+              {{ page.header.half_text|markdown }}
+              <a href="{{ page.header.half_button_url }}" class="button is-primary is-rounded">{{ page.header.half_button_text }}</a>
+          </div>
+        </div>
+      </div>
+    </section>

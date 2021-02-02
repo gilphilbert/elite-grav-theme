@@ -25,3 +25,59 @@ color: #F45200;
     border-radius: 1000px;
     border: 5px solid white
 }
+figure.testimonial img {
+    border-radius: 1000px;
+    height: 200px;
+    width: 200px;
+}
+.modular-testimonial .box {
+    border-radius: 0;
+}
+.modular-testimonial .box p {
+    font-size: 15px;
+    padding: 0;
+    margin: 8px 0 0 0;
+}
+.modular-testimonial .text {
+    display: -webkit-box;
+    /* autoprefixer: off */
+    -webkit-box-orient: vertical;
+    /* autoprefixer: on */
+    overflow: hidden;
+    text-overflow: ellipsis;
+    transition: all 0.3s ease
+}
+.modular-testimonial .text.clip {
+    -webkit-line-clamp: 6;
+    transition: all 0.3s ease
+}
+.modular-testimonial .button {
+    margin: 8px
+}
+.button.is-small {
+    font-size: 0.9rem
+}
+.video-container, #person-modal figure {
+    position: relative;
+    padding-bottom: 56.25%;
+}
+.video-container embed, #person-modal img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+}
+.person {
+    cursor: pointer
+}
+#person-modal .text-container {
+    padding: 8px 20px 20px 20px
+}
+#person-modal figure {
+    width: 100%
+}
+#person-modal img {
+    width: 100%;
+    object-fit: cover;
+}
