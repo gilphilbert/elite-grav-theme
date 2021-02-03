@@ -39,6 +39,9 @@ form:
                 .accred:
                   type: selectize
                   label: Accreditations
+                .title:
+                  type: text
+                  label: Title
                     
             header.team_marketing:
               name: members
@@ -61,6 +64,9 @@ form:
                 .accred:
                   type: selectize
                   label: Accreditations
+                .title:
+                  type: text
+                  label: Title
                     
             header.team_coaches:
               name: members

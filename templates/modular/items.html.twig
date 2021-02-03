@@ -1,42 +1,33 @@
+{% if page.header.items|length == 3 %}
+  {% set colsize = '4' %}
+{% elseif page.header.items|length == 2 %}
+  {% set colsize = '6' %}
+{% else %}
+  {% set colsize = '12' %}
+{% endif %}
     <section class="has-text-centered {{ page.header.body_classes }}"> 
       <div class="container">
         <div class="columns is-multiline">
           <div class="column is-full">
             <h1 class="title is-uppercase">{{ page.title }}</h1>
-            <p>{{ page.header.items_subtitle }}</p>
+            <p>{{ page.content|raw }}</p>
           </div>
-          <div class="column is-4">
-            {% if page.header.items_1_image %}
+          {% for item in page.header.items %}
+          <div class="column is-{{ colsize }}">
+            {% if item.image %}
             <figure class="image is-96x96 is-inline-block">
-              <img src="{{ page.media[page.header.items_1_image].url() }}" />
+              <img src="{{ page.media[item.image].url() }}" />
             </figure>
             {% endif %}
-            <h3 class="title">{{ page.header.items_1_title }}</h3>
-            <p>{{ page.header.items_1_subtitle }}</p>
+            <h3 class="title">{{ item.title }}</h3>
+            <p>{{ item.subtitle }}</p>
           </div>
-          <div class="column is-4">
-            {% if page.header.items_1_image %}
-            <figure class="image is-96x96 is-inline-block">
-              <img src="{{ page.media[page.header.items_2_image].url() }}" />
-            </figure>
-            {% endif %}
-            <h3 class="title">{{ page.header.items_2_title }}</h3>
-            <p>{{ page.header.items_2_subtitle }}</p>
-          </div>
-          <div class="column is-4">
-            {% if page.header.items_1_image %}
-            <figure class="image is-96x96 is-inline-block">
-              <img src="{{ page.media[page.header.items_3_image].url() }}" />
-            </figure>
-            {% endif %}
-            <h3 class="title">{{ page.header.items_3_title }}</h3>
-            <p>{{ page.header.items_3_subtitle }}</p>
-          </div>
-          <div class="column is-full">
+          {% endfor %}
           {% if page.header.button_text %}
+          <div class="column is-full">
             <a class="button is-rounded is-primary" href="{{ page.header.button_url }}">{{ page.header.button_text }}</a>
-          {% endif %}
           </div>
+          {% endif %}
         </div>
       </div>
     </section>
