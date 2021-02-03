@@ -9,18 +9,15 @@
 
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta property="og:image" content="/img/video-preview.jpg">
+    <meta property="og:image" content="{{ url('theme://assets/elite-screenshots.jpg') }}">
     <meta property="og:image:type" content="image/png">
     <meta property="og:image:width" content="859">
     <meta property="og:image:height" content="483">
 
-    <link rel="icon" type="image/png" href="{{ url('theme://images/favicon.png') }}" />
     <link rel="canonical" href="{{ page.url(true, true) }}" />
 {% endblock head %}
 
 {% block stylesheets %}
-    {# {% do assets.addCss('theme://css-compiled/spectre'~compress) %} #}
-    {# {% if theme_var('spectre.exp') %}{% do assets.addCss('theme://css-compiled/spectre-exp'~compress)  %}{% endif %} #}
     {% do assets.addCss('theme://css/spartans.css') %}
     {% do assets.addCss('theme://css/temp.css') %}
     {% do assets.addCss('https://fonts.googleapis.com/css?family=Muli:700,400|Noto+Sans&display=swap') %}
@@ -36,6 +33,7 @@
     {{ assets.css()|raw }}
     {{ assets.js()|raw }}
 {% endblock %}
+
 </head>
 {% set classes = page.header.body_classes %}
 <body class="{{ classes }}">

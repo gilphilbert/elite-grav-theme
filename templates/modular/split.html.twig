@@ -11,7 +11,7 @@
 {% endif %}
     <section class="has-half-image {{ position_class }} {{ page.header.body_classes }}" style="background-image: url('{{ background_image }}')">
     {% if background_image == '' %}
-      <figure class="image is-400x400 is-bottom-50 z-index-1">
+      <figure class="image is-400x400 is-bottom-50 z-index-1 is-hidden-touch">
         <img src="{{ page.media[page.header.half_image].url() }}" />
       </figure>
     {% endif %}
