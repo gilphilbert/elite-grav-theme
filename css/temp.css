@@ -23,11 +23,8 @@ color: #F45200;
 body.has-background-black {
     background-color: #1a1a1a!important
 }
-.team-member img {
-    border-radius: 1000px;
-    width: 100%;
-    border: 5px solid white
-}
+
+/* testimonial formatting */
 figure.testimonial img {
     height: 175px;
     width: 300px;
@@ -60,49 +57,23 @@ figure.testimonial img {
 .button.is-small {
     font-size: 0.9rem
 }
-.video-container, #person-modal figure {
-    position: relative;
-    padding-bottom: 56.25%;
-}
-.video-container.is-50 {
-    margin: 0 25%;
-    padding-bottom: 28%
-}
-.video-container embed, #person-modal img {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-}
-.person {
-    cursor: pointer
-}
-.person .subtitle {
-    margin-top: -24px;
-    opacity: 0.7;
-}
-#person-modal .text-container {
-    padding: 8px 20px 20px 20px
-}
-#person-modal figure {
-    width: 100%
-}
-#person-modal img {
-    width: 100%;
-    object-fit: cover;
-}
+
 .has-half-image {
     background-position: left
 }
 .has-half-image.image-right {
     background-position: right;
 }
+
 .has-text-right .title:after {
     left: calc(100% - 40px)
 }
 
+
 /* text color overrides based on background */
+.title, .subtitle {
+    color: inherit
+}
 .has-background-primary {
     color: white!important
 }
@@ -129,4 +100,43 @@ figure.testimonial img {
 .has-background-black .title {
     color: white!important
 }
-/* set transition for buttons */
+
+/* stuff for people page */
+.video-container, #person-modal figure {
+    position: relative;
+    padding-bottom: 56.25%;
+}
+.video-container.is-50 {
+    margin: 0 25%;
+    padding-bottom: 28%
+}
+.video-container embed, #person-modal img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+}
+.team-member img {
+    border-radius: 1000px;
+    width: 100%;
+    border: 5px solid white
+}
+
+.person {
+    cursor: pointer
+}
+.person .subtitle {
+    margin-top: -24px;
+    opacity: 0.7;
+}
+#person-modal .text-container {
+    padding: 8px 20px 20px 20px
+}
+#person-modal figure {
+    width: 100%
+}
+#person-modal img {
+    width: 100%;
+    object-fit: cover;
+}
