@@ -59,8 +59,8 @@ form:
                   label: Style
                   default: 1
                   options:
-                    1: Outlined
-                    2: Filled
+                    1: 'Outlined'
+                    2: 'Filled'
 
                 .url:
                   type: pages
