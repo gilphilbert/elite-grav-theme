@@ -10,7 +10,12 @@
                 <button class="button is-rounded is-outlined is-white" onclick="scrollToAnchor('section-1')">Learn more</button>
             {% endif %}
             {% for button in page.header.buttons %}
-                <a class="button is-rounded {{ button.class }}" href="{{ button.url }}">{{ button.text }}</a>
+                {% if button.style == 1 %}
+                    {% set additional_style = ' is-outlined' %}
+                {% else %}
+                    {% set additional_style = '' %}
+                {% endif %}
+                <a class="button is-rounded is-{{ button.color }}{{ additional_style }}" href="{{ button.url }}">{{ button.text }}</a>
             {% endfor %}
             </div>
         </div>

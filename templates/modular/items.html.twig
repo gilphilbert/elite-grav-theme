@@ -9,8 +9,12 @@
       <div class="container">
         <div class="columns is-multiline">
           <div class="column is-full">
+          {% if page.header.show_title == '1' %}
             <h1 class="title is-uppercase">{{ page.title }}</h1>
+          {% endif %}
+          {% if page.content %}
             <p>{{ page.content|raw }}</p>
+          {% endif %}
           </div>
           {% for item in page.header.items %}
           <div class="column is-{{ colsize }}">

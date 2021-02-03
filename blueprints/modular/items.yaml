@@ -10,6 +10,14 @@ form:
           title: Items
           fields:
 
+            header.show_title:
+              type: toggle
+              label: Show Title
+              default: 1
+              options:
+                1: Yes
+                0: No
+
             header.items:
               name: items
               type: list
@@ -22,7 +30,7 @@ form:
                   label: Title
                 .subtitle:
                   type: text
-                  label: Subtitle
+                  label: Text
                 .image:
                   type: pagemediaselect
                   label: Image

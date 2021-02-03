@@ -23,6 +23,10 @@ form:
               label: Button links to
               description: Where clicking the button takes you
             header.image_position:
-              type: text
-              label: Image Position
-              description: Should image be on the left, right or bottom-right?
+              type: select
+              label: Image location
+              default: left
+              options:
+                left: Left
+                right: Right
+                bottom-right: Bottom Right

@@ -46,10 +46,22 @@ form:
                 .text:
                   type: text
                   label: Text
-                .class:
-                  type: text
-                  label: Button class
-                  description: Valid options are is-primary, is-white and is-black for colors and is-outlined for style
+                .color:
+                  type: select
+                  label: Color
+                  default: white
+                  options:
+                    white: White
+                    primary: Primary
+                    black: Black
+                .style:
+                  type: toggle
+                  label: Style
+                  default: 1
+                  options:
+                    1: Outlined
+                    2: Filled
+
                 .url:
                   type: pages
                   label: Button destination
