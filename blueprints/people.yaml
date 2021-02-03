@@ -24,24 +24,24 @@ form:
               label: Management
 
               fields:
-                .image:
-                  type: pagemediaselect
-                  label: Photo
                 .thumb:
                   type: pagemediaselect
                   label: Thumbnail
                 .name:
                   type: text
                   label: Name
+                .title:
+                  type: text
+                  label: Title
+                .image:
+                  type: pagemediaselect
+                  label: Photo
                 .text:
                   type: markdown
                   label: Text
                 .accred:
                   type: selectize
                   label: Accreditations
-                .title:
-                  type: text
-                  label: Title
                     
             header.team_marketing:
               name: members
@@ -49,24 +49,24 @@ form:
               label: Marketing
 
               fields:
-                .image:
-                  type: pagemediaselect
-                  label: Photo
                 .thumb:
                   type: pagemediaselect
                   label: Thumbnail
                 .name:
                   type: text
                   label: Name
+                .title:
+                  type: text
+                  label: Title
+                .image:
+                  type: pagemediaselect
+                  label: Photo
                 .text:
                   type: markdown
                   label: Text
                 .accred:
                   type: selectize
                   label: Accreditations
-                .title:
-                  type: text
-                  label: Title
                     
             header.team_coaches:
               name: members
@@ -74,21 +74,21 @@ form:
               label: Coaches
 
               fields:
-                .image:
-                  type: pagemediaselect
-                  label: Photo
                 .thumb:
                   type: pagemediaselect
                   label: Thumbnail
                 .name:
                   type: text
                   label: Name
+                .image:
+                  type: pagemediaselect
+                  label: Photo
                 .text:
                   type: markdown
                   label: Text
                 .accred:
                   type: selectize
-                  label: Accreditations                    
+                  label: Accreditations                   
                     
             header.team_fontdesk:
               name: members
@@ -96,15 +96,15 @@ form:
               label: Front Desk
 
               fields:
-                .image:
-                  type: pagemediaselect
-                  label: Photo
                 .thumb:
                   type: pagemediaselect
                   label: Thumbnail
                 .name:
                   type: text
                   label: Name
+                .image:
+                  type: pagemediaselect
+                  label: Photo
                 .text:
                   type: markdown
                   label: Text

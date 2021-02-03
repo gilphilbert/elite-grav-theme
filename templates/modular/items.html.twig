@@ -19,8 +19,12 @@
               <img src="{{ page.media[item.image].url() }}" />
             </figure>
             {% endif %}
+            {% if item.title %}
             <h3 class="title">{{ item.title }}</h3>
+            {% endif %}
+            {% if item.subtitle %}
             <p>{{ item.subtitle }}</p>
+            {% endif %}
           </div>
           {% endfor %}
           {% if page.header.button_text %}

@@ -2,14 +2,17 @@
     <div class="hero-body">
     <div class="container">
         <div class="columns">
-        <div class="column is-8">
-            <h2 class="subtitle is-uppercase">{{ page.header.hero_subtitle }}</h2>
-            <h1 class="title is-uppercase">{{ page.header.hero_title }}</h1>
-            <p>{{ page.header.hero_text }}</p>
-            <button class="button is-rounded is-outlined is-white" onclick="scrollToAnchor('section-1')">Learn more</button>
-            &nbsp;
-            <button class="button is-rounded is-outlined is-primary">Book now!</button>
-        </div>
+            <div class="column is-8">
+                <h2 class="subtitle is-uppercase">{{ page.header.hero_subtitle }}</h2>
+                <h1 class="title is-uppercase">{{ page.header.hero_title }}</h1>
+                <p>{{ page.header.hero_text }}</p>
+            {% if page.header.show_more == 1 %}
+                <button class="button is-rounded is-outlined is-white" onclick="scrollToAnchor('section-1')">Learn more</button>
+            {% endif %}
+            {% for button in page.header.buttons %}
+                <a class="button is-rounded {{ button.class }}" href="{{ button.url }}">{{ button.text }}</a>
+            {% endfor %}
+            </div>
         </div>
     </div>
     </div>

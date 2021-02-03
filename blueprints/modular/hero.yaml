@@ -28,6 +28,31 @@ form:
               type: filepicker
               label: Background Image
               preview_images: true
-              description: 'The background image for the hero'
+            header.show_more:
+              type: toggle
+              label: Show more button
+              default: 1
+              options:
+                1: Enabled
+                2: Disabled
 
+            header.buttons:
+              name: items
+              type: list
+              max: 2
+              label: Buttons
 
+              fields:
+                .text:
+                  type: text
+                  label: Text
+                .class:
+                  type: text
+                  label: Button class
+                  description: Valid options are is-primary, is-white and is-black for colors and is-outlined for style
+                .url:
+                  type: pages
+                  label: Button destination
+                  show_modular: false
+                  show_all: false
+                  show_root: true
