@@ -20,12 +20,14 @@ color: #F45200;
 background: transparent;
 color: #F45200;
 }
+body.has-background-black {
+    background-color: #1a1a1a!important
+}
 .team-member img {
     width: 100%;
     border: 5px solid white
 }
 figure.testimonial img {
-    border-radius: 1000px;
     height: 175px;
     width: 300px;
     object-fit: cover
@@ -94,6 +96,21 @@ figure.testimonial img {
 .has-text-right .title:after {
     left: calc(100% - 40px)
 }
+
+/* text color overrides based on background */
+.has-background-primary {
+    color: white!important
+}
+.has-background-primary .title {
+    color: white!important
+}
+
+.has-background-white {
+    color: #0a0a0a!important
+}
+.has-background-white .title {
+    color: #0a0a0a!important
+}
 .has-background-white .title:after {
     background-color: #F45200;
 }
@@ -101,22 +118,10 @@ figure.testimonial img {
     background-color: #F45200;
 }
 
-.has-background-primary {
-    color: white
-}
-.has-background-primary .title {
-    color: white
-}
-.has-background-white {
-    color: black
-}
-.has-background-white .title {
-    color: black
-}
 .has-background-black {
-    color: white
+    color: white!important
 }
 .has-background-black .title {
-    color: white
+    color: white!important
 }
 /* set transition for buttons */
