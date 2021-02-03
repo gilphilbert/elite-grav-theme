@@ -58,3 +58,18 @@ form:
       label: Opening hours
       help: Opening hours for the footer and contact page
 
+
+    social_icons:
+      name: items
+      type: list
+      max: 10
+      label: Social Icons
+
+      fields:
+        .icon:
+          type: text
+          label: Icon Name
+          description: 'Get the icon name from https://simpleicons.org/'
+        .url:
+          type: text
+          label: Destination URL

@@ -18,6 +18,15 @@
                 </a>
               </div>
             </div>
+            {% if theme_var('social_icons')|length > 0 %}
+            <div class="columns">
+              <div class="column has-text-centered">
+              {% for icon in theme_var('social_icons') %}
+                <a href="{{ icon.url }}" class="brand-icon" style="-webkit-mask: url(https://cdn.jsdelivr.net/npm/simple-icons@v4/icons/{{ icon.icon }}.svg) no-repeat 50% 50%;mask: url(https://cdn.jsdelivr.net/npm/simple-icons@v4/icons/{{ icon.icon }}.svg) no-repeat 50% 50%;"></a>&nbsp;
+              {% endfor %}
+              </div>
+            </div>
+            {% endif %}
             <div class="columns">
               <div class="column">
                 <figure class="image is-128x128">
