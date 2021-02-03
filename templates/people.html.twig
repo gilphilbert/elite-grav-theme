@@ -17,7 +17,7 @@
     {{ content|raw }}
 
     <h3 class="title is-uppercase no-border">Management</h2>
-    <div class="columns">
+    <div class="columns is-multiline">
 
     {% set offset_position = 1 %}
     {% set rows = 0 %}
@@ -51,7 +51,7 @@
     </div>
 
     <h3 class="title is-uppercase no-border">Marketing</h3>
-    <div class="columns">
+    <div class="columns is-multiline">
 
     {% set offset_position = 1 %}
     {% set rows = 0 %}
@@ -85,7 +85,7 @@
     </div>
 
     <h3 class="title is-uppercase no-border">Coaches</h3>
-    <div class="columns">
+    <div class="columns is-multiline">
 
     {% set offset_position = 1 %}
     {% set rows = 0 %}
@@ -119,12 +119,12 @@
     </div>
 
     <h3 class="title is-uppercase no-border">Front Desk</h3>
-    <div class="columns">
+    <div class="columns is-multiline">
 
     {% set offset_position = 1 %}
     {% set rows = 0 %}
     {% set cols = 0 %}
-    {% for i in 1..page.header.team_frontdesk|length %}
+    {% for i in 1..page.header.team_fontdesk|length %}
         {% if cols == 6 %}
             {% set cols = 1 %}
             {% set rows = rows + 1 %}
@@ -135,7 +135,7 @@
     {% set offset = 6 - cols %}
     {% set offset_pos = (rows * 6) + 1 %}
 
-    {% for member in page.header.team_frontdesk %}
+    {% for member in page.header.team_fontdesk %}
         {% set this_offset = '' %}
         {% if loop.index == offset_pos %}
             {% set this_offset = ' is-offset-' ~ offset %}

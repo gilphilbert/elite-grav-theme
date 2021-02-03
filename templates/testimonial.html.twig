@@ -14,7 +14,7 @@
         {{ content|raw }}
 
         {% if page.header.videos|length > 0 %}
-        <div class="columns">
+        <div class="columns is-multiline">
             {% for t in page.header.videos %}  
                 <div class="column is-6 ">
                     <h2>{{ t.name }}</h2>
@@ -27,7 +27,7 @@
         {% endif %}
 
         {% if page.header.texts|length > 0 %}
-        <div class="columns">
+        <div class="columns is-multiline">
             {% for t in page.header.texts %}
                 <div class="column is-4">
                     <div class="box has-background-primary has-text-white">
