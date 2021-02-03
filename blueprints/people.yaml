@@ -36,6 +36,9 @@ form:
                 .text:
                   type: markdown
                   label: Text
+                .accred:
+                  type: selectize
+                  label: Accreditations
                     
             header.team_marketing:
               name: members
@@ -55,7 +58,9 @@ form:
                 .text:
                   type: markdown
                   label: Text
-                    
+                .accred:
+                  type: selectize
+                  label: Accreditations
                     
             header.team_coaches:
               name: members
@@ -75,8 +80,9 @@ form:
                 .text:
                   type: markdown
                   label: Text
-                    
-                    
+                .accred:
+                  type: selectize
+                  label: Accreditations                    
                     
             header.team_fontdesk:
               name: members
@@ -96,4 +102,6 @@ form:
                 .text:
                   type: markdown
                   label: Text
-                    
+                .accred:
+                  type: selectize
+                  label: Accreditations

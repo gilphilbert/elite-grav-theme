@@ -61,6 +61,10 @@ figure.testimonial img {
     position: relative;
     padding-bottom: 56.25%;
 }
+.video-container.is-50 {
+    margin: 0 25%;
+    padding-bottom: 28%
+}
 .video-container embed, #person-modal img {
     position: absolute;
     top: 0;
@@ -81,3 +85,38 @@ figure.testimonial img {
     width: 100%;
     object-fit: cover;
 }
+.has-half-image {
+    background-position: left
+}
+.has-half-image.image-right {
+    background-position: right;
+}
+.has-text-right .title:after {
+    left: calc(100% - 40px)
+}
+.has-background-white .title:after {
+    background-color: #F45200;
+}
+.has-background-black .title:after {
+    background-color: #F45200;
+}
+
+.has-background-primary {
+    color: white
+}
+.has-background-primary .title {
+    color: white
+}
+.has-background-white {
+    color: black
+}
+.has-background-white .title {
+    color: black
+}
+.has-background-black {
+    color: white
+}
+.has-background-black .title {
+    color: white
+}
+/* set transition for buttons */

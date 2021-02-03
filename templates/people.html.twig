@@ -46,7 +46,7 @@
         {% if member.name %}</a>{% endif %}
             <p class="team-member">{{ member.name }}</p>
         </div>
-        {% set array = array|merge([{ name: member.name, thumb: page.media[member.thumb].url(), image: page.media[member.image].url(), text: member.text }]) %}
+        {% set array = array|merge([{ name: member.name, thumb: page.media[member.thumb].url(), image: page.media[member.image].url(), text: member.text, accred: member.accred }]) %}
     {% endfor %}
     </div>
 
@@ -80,7 +80,7 @@
         {% if member.name %}</a>{% endif %}
             <p class="team-member">{{ member.name }}</p>
         </div>
-        {% set array = array|merge([{ name: member.name, thumb: page.media[member.thumb].url(), image: page.media[member.image].url(), text: member.text }]) %}
+        {% set array = array|merge([{ name: member.name, thumb: page.media[member.thumb].url(), image: page.media[member.image].url(), text: member.text, accred: member.accred }]) %}
     {% endfor %}
     </div>
 
@@ -114,7 +114,7 @@
         {% if member.name %}</a>{% endif %}
             <p class="team-member">{{ member.name }}</p>
         </div>
-        {% set array = array|merge([{ name: member.name, thumb: page.media[member.thumb].url(), image: page.media[member.image].url(), text: member.text }]) %}
+        {% set array = array|merge([{ name: member.name, thumb: page.media[member.thumb].url(), image: page.media[member.image].url(), text: member.text, accred: member.accred }]) %}
     {% endfor %}
     </div>
 
@@ -148,7 +148,7 @@
         {% if member.name %}</a>{% endif %}
             <p class="team-member">{{ member.name }}</p>
         </div>
-        {% set array = array|merge([{ name: member.name, thumb: page.media[member.thumb].url(), image: page.media[member.image].url(), text: member.text|markdown }]) %}
+        {% set array = array|merge([{ name: member.name, thumb: page.media[member.thumb].url(), image: page.media[member.image].url(), text: member.text, accred: member.accred }]) %}
     {% endfor %}
     </div>
 </section>
@@ -160,6 +160,7 @@ window.members = {
         name: '{{ item.name|raw }}',
         thumb: '{{ item.thumb|raw }}',
         image: '{{ item.image| raw }}',
+        accred: '{{ item.accred| raw }}',
         text: `{{ item.text|markdown }}`
     },
 {% endfor %}
@@ -173,6 +174,12 @@ window.addEventListener("DOMContentLoaded", function() {
             mod.querySelector('img').src = person.image
             mod.querySelector('h2').innerText = person.name
             mod.querySelector('.text').innerHTML = person.text
+            let html = ''
+            person.accred.split(',').forEach(ac => {
+                console.log(ac)
+                html += '<li>' + ac + '</li>'
+            })
+            document.querySelector('.accred').innerHTML = html
             mod.classList.add('is-active')
         })
     })
@@ -189,6 +196,8 @@ window.addEventListener("DOMContentLoaded", function() {
         <div class="text-container">
             <h2 class="title is-uppercase no-border has-text-black"></h2>
             <div class="text"></div>
+            <h4 class="is-uppercase no-border has-text-black">Accreditations</h4>
+            <ul class="accred has-text-small"></ul>
         </div>
   </div>
   <button class="modal-close is-large" aria-label="close" onClick="document.getElementById('person-modal').classList.remove('is-active')"></button>

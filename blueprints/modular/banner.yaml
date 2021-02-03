@@ -30,12 +30,5 @@ form:
               markdown: false
               show_modular: false
               show_all: false
-              show_root: false
+              show_root: true
               description: Where clicking the button takes you
-            header.banner_background:
-              type: text
-              label: Background
-              markdown: false
-              description: Background color (choose 'primary', 'black', or 'white')
-
-

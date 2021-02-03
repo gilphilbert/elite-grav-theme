@@ -7,17 +7,25 @@
     {% endfor %}
 {% endblock %}
 
+
 {% block body %}
-{% if page.content %}
-    <section class="has-extra-wide-margins">
+{% if page.content or page.title != 'Home' %}
+    <div class="container">
+    <section class="section has-text-centered">
+        {% if page.title != 'Home' %}
+            <h1 class="title is-uppercase no-border">{{ page.title }}</h1>
+        {% endif %}
         <div class="container">
+        {% if page.content %}
             <div class="columns">
                 <div class="column is-12">
                     {{ page.content|raw }}
                 </div>
             </div>
+        {% endif %}
         </div>
     </section>
+    </div>
 {% endif %}
 {% for module in page.collection() if module.template != 'modular/hero' %}
     <div id="{{ module.menu|hyphenize }}"></div>

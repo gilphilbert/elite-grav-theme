@@ -1,0 +1,28 @@
+title: Split Image
+'@extends': default
+
+form:
+  fields:
+    tabs:
+      fields:
+        buttons:
+          type: tab
+          title: Split Image
+          fields:
+            header.half_image:
+              type: pagemediaselect
+              label: Image
+              preview_images: true
+              description: The image for the side
+            header.button_text:
+              type: text
+              label: Button text
+              description: The button text
+            header.button_url:
+              type: pages
+              label: Button links to
+              description: Where clicking the button takes you
+            header.image_position:
+              type: text
+              label: Image Position
+              description: Should image be on the left, right or bottom-right?

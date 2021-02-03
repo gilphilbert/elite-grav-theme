@@ -1,5 +1,10 @@
 {% extends 'partials/base.html.twig' %}
 
-{% block content %}
-    {{ page.content|raw }}
+{% block body %}
+<div class="container">
+    <section class="section modular-team-member has-text-centered {{ page.header.class}}">
+        <h1 class="title is-uppercase">{{ page.title }}</h1>
+        {{ page.content|raw }}
+    </section>
+</div>
 {% endblock %}

@@ -56,4 +56,17 @@ form:
               label: Item 3 Image
               preview_images: true
               description: 'The image for item 3'
-
+        button:
+          type: tab
+          title: Button
+          fields:
+            header.button_text:
+              type: text
+              label: Button text
+            header.button_url:
+              type: pages
+              label: Button destination
+              markdown: false
+              show_modular: false
+              show_all: false
+              show_root: true

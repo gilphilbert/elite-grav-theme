@@ -1,0 +1,44 @@
+{% set position_class = '' %}
+{% set text_location = 'right' %}
+{% set background_image = page.media[page.header.half_image].url() %}
+{% if page.header.image_position == 'right' %}
+  {% set position_class = 'image-right has-text-right' %}
+  {% set text_location = 'left' %}
+{% elseif page.header.image_position == 'bottom-right' %}
+  {% set position_class = 'image-right has-text-right has-position-relative has-extra-wide-margins' %}
+  {% set text_location = 'left' %}
+{% set background_image = '' %}
+{% endif %}
+    <section class="has-half-image {{ position_class }} {{ page.header.body_classes }}" style="background-image: url('{{ background_image }}')">
+    {% if background_image == '' %}
+      <figure class="image is-400x400 is-bottom-50 z-index-1">
+        <img src="{{ page.media[page.header.half_image].url() }}" />
+      </figure>
+    {% endif %}
+      <div class="container">
+        <div class="columns">
+          <div class="column is-6">
+          {% if text_location == 'left' %}
+            <h1 class="title is-uppercase">
+              {{ page.title }}
+            </h1>
+              {{ page.content|markdown }}
+            {% if page.header.button_text != '' %}
+              <a class="button is-rounded is-white" href="{{ page.header.button_url }}">{{ page.header.button_text }}</a>
+            {% endif %}
+          {% endif %}
+          </div>
+          <div class="column is-6">
+          {% if text_location == 'right' %}
+            <h1 class="title is-uppercase">
+              {{ page.title }}
+            </h1>
+              {{ page.content|markdown }}
+            {% if page.header.button_text != '' %}
+              <a class="button is-rounded is-white" href="{{ page.header.button_url }}">{{ page.header.button_text }}</a>
+            {% endif %}
+          {% endif %}
+          </div>
+        </div>
+      </div>
+    </section>

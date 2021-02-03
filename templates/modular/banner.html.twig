@@ -1,10 +1,4 @@
-{% set page_class = page.header.banner_background|default("white") %}
-{% if page_class == "white" %}
-    {% set page_text = "black" %}
-{% else %}
-    {% set page_text = "white" %}
-{% endif %}
-    <section class="has-background-{{ page_class }} has-text-centered has-text-{{ page_text }}">
+    <section class="has-text-centered {{ page.header.body_classes }}">
       <div class="container">
         <div class="columns">
           <div class="column">
