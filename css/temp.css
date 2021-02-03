@@ -24,6 +24,7 @@ body.has-background-black {
     background-color: #1a1a1a!important
 }
 .team-member img {
+    border-radius: 1000px;
     width: 100%;
     border: 5px solid white
 }
@@ -76,6 +77,10 @@ figure.testimonial img {
 }
 .person {
     cursor: pointer
+}
+.person .subtitle {
+    margin-top: -24px;
+    opacity: 0.7;
 }
 #person-modal .text-container {
     padding: 8px 20px 20px 20px

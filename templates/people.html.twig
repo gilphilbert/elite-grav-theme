@@ -45,6 +45,7 @@
             </figure>
         {% if member.name %}</a>{% endif %}
             <p class="team-member">{{ member.name }}</p>
+            <p class="subtitle">{{ member.title }}</p>
         </div>
         {% set array = array|merge([{ name: member.name, thumb: page.media[member.thumb].url(), image: page.media[member.image].url(), text: member.text, accred: member.accred }]) %}
     {% endfor %}
