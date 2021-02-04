@@ -157,3 +157,7 @@ figure.testimonial img {
     -webkit-mask: url(https://s3-us-west-2.amazonaws.com/s.cdpn.io/18515/heart.svg) no-repeat 50% 50%;
     mask: url(https://s3-us-west-2.amazonaws.com/s.cdpn.io/18515/heart.svg) no-repeat 50% 50%;
 }
+
+.box {
+    border-radius: none
+}
