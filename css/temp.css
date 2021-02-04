@@ -24,6 +24,11 @@ body.has-background-black {
     background-color: #1a1a1a!important
 }
 
+p.has-no-padding,
+div.has-no-p-padding p { 
+    padding-bottom: 0;
+}
+
 /* testimonial formatting */
 figure.testimonial img {
     height: 175px;

@@ -1,0 +1,19 @@
+title: Map
+'@extends': default
+
+form:
+  fields:
+    tabs:
+      fields:
+        buttons:
+          type: tab
+          title: Map
+          fields:
+            header.name:
+              type: text
+              label: Name
+              markdown: false
+            header.address:
+              type: text
+              label: Address
+              markdown: false

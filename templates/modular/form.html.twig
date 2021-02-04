@@ -1,0 +1,17 @@
+<div class="section contact-form {{ page.header.body_classes }}">
+    <div class="container">
+        <div class="columns is-multiline">
+            <div class="column is-full has-text-centered">
+            <h1 class="title is-uppercase">{{ page.title }}</h1>
+            {% if page.content %}
+            <p>{{ page.content|raw }}</p>
+            {% endif %}
+            </div>
+
+            <div class="column is-12-touch is-8-desktop is-offset-2-desktop box">
+                {{ page.content|markdown }}
+                {% include "forms/form.html.twig" %}
+            </div>
+        </div>
+    </div>
+</div>
