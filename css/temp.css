@@ -160,24 +160,32 @@ figure.testimonial img {
     mask-size: cover;
 }
 
-.box {
+.has-background-black .box {
     border-radius: 0;
-    background-color: #1a1a1a;
+    background-color: transparent;
     color: white;
 }
 
-.input {
-    background-color: #777;
+.has-background-black .box .input {
+    background-color: transparent;
     border-color: #777;
-    color: #0a0a0a;
+    color: #999;
+    transition: all 0.3s ease;
+    border-radius: 7px;
+    border-width: 2px;
+}
+.has-background-black .box .input:hover {
+    border-color: #777;
+    background-color: #191919;
     transition: all 0.3s ease;
 }
-.input:hover, .input:focus {
-    background-color: #999;
-    border-color: #999;
-    transition: all 0.3s ease;
+.has-background-black .box .input:focus {
+    border-color: #F45200;
 }
-.input::placeholder {
+.has-background-black .input::placeholder {
     color: #444;
     opacity: 1;
   }
+body, button, input, select, textarea {
+  font-family: "Noto Sans", BlinkMacSystemFont, -apple-system, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Fira Sans", "Droid Sans", "Helvetica Neue", Helvetica, Arial, sans-serif
+}
