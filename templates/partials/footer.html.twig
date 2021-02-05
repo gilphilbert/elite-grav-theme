@@ -5,19 +5,29 @@
 
     <footer class="has-background-black has-text-white">
       <div class="container">
-        <div class="columns">
-          <div class="column">
-            <p class="has-text-centered">Sign up to the newsletter for healthy recipes, fitness advice and more!</p>
-            <div class="field has-addons">
-              <div class="control">
-                <input class="input is-rounded" type="text" placeholder="Email address">
+        <div class="columns is-multiline">
+          <div class="column is-12">
+            <form action="https://elitespartans.us2.list-manage.com/subscribe/post?u=eccb3ac09e588744de691fce5&amp;id=ddd3d5cd07" method="post" id="mc-embedded-subscribe-form" name="mc-embedded-subscribe-form" class="validate" target="_blank" novalidate>
+              <p class="has-text-centered">Sign up to the newsletter for healthy recipes, fitness advice and more!</p>
+              <div class="field has-addons">
+                <div class="control">
+                  <!-- <input class="input is-rounded" type="text" placeholder="Email address"> -->
+                  <input class="input is-rounded required email" id="mce-EMAIL" type="email" value="" name="EMAIL" placeholder="Email address">
+                  <div id="mce-responses" class="clear">
+                    <div class="response has-text-centered is-success" id="mce-error-response" style="display:none"></div>
+                    <div class="response has-text-centered is-danger" id="mce-success-response" style="display:none"></div>
+                  </div>
+                </div>
+                <div class="control">
+                  <input type="submit" value="Sign me up!" name="subscribe" id="mc-embedded-subscribe" class="button is-rounded is-primary">
+                </div>
               </div>
-              <div class="control">
-                <a class="button is-rounded is-primary">
-                  Sign me up!
-                </a>
-              </div>
-            </div>
+              <div style="position: absolute; left: -5000px;" aria-hidden="true"><input type="text" name="b_eccb3ac09e588744de691fce5_ddd3d5cd07" tabindex="-1" value=""></div>
+            </form>
+            <script type='text/javascript' src='//s3.amazonaws.com/downloads.mailchimp.com/js/mc-validate.js'></script>
+            <script type='text/javascript'>(function($) {window.fnames = new Array(); window.ftypes = new Array();fnames[0]='EMAIL';ftypes[0]='email';fnames[1]='FNAME';ftypes[1]='text';fnames[2]='LNAME';ftypes[2]='text';fnames[3]='ADDRESS';ftypes[3]='address';fnames[4]='PHONE';ftypes[4]='phone';fnames[5]='BIRTHDAY';ftypes[5]='birthday';}(jQuery));var $mcj = jQuery.noConflict(true);</script>
+          </div>
+          <div class="column is-12">
             {% if theme_var('social_icons')|length > 0 %}
             <div class="columns">
               <div class="column has-text-centered">
@@ -27,6 +37,8 @@
               </div>
             </div>
             {% endif %}
+          </div>
+          <div class="column is-12">
             <div class="columns">
               <div class="column">
                 <figure class="image is-128x128">

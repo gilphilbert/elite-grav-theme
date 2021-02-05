@@ -189,3 +189,12 @@ figure.testimonial img {
 body, button, input, select, textarea {
     font-family: "Noto Sans", BlinkMacSystemFont, -apple-system, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Fira Sans", "Droid Sans", "Helvetica Neue", Helvetica, Arial, sans-serif
 }
+
+input.input::placeholder {
+    color: #222;
+    opacity: 1;
+}
+
+footer .field .control input.button {
+    background-color: #F45200;
+}
