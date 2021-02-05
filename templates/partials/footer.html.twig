@@ -56,7 +56,7 @@
               </div>
               <div class="column">
                 <ul>
-                {% for page in pages.children.visible %}
+                {% for page in pages.children %}
                   <li><a href="{{ page.url }}">{{ page.menu }}</a></li>
                 {% endfor %}
                 </ul>
