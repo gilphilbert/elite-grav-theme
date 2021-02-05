@@ -185,7 +185,7 @@ figure.testimonial img {
 .has-background-black .input::placeholder {
     color: #444;
     opacity: 1;
-  }
+}
 body, button, input, select, textarea {
-  font-family: "Noto Sans", BlinkMacSystemFont, -apple-system, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Fira Sans", "Droid Sans", "Helvetica Neue", Helvetica, Arial, sans-serif
+    font-family: "Noto Sans", BlinkMacSystemFont, -apple-system, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Fira Sans", "Droid Sans", "Helvetica Neue", Helvetica, Arial, sans-serif
 }
