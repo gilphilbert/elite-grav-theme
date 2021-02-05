@@ -18,8 +18,12 @@
 {% endblock head %}
 
 {% block stylesheets %}
-    {% do assets.addCss('theme://css/spartans.css') %}
-    {% do assets.addCss('theme://css/temp.css') %}
+    {% if theme_var('production-mode') == "1" %}
+        {% do assets.addCss('theme://css-compiled/spartans.min.css') %}
+    {% else %}
+        {% do assets.addCss('theme://css/spartans.css') %}
+    {% endif %}
+    
     {% do assets.addCss('https://fonts.googleapis.com/css?family=Muli:700,400|Noto+Sans&display=swap') %}
     {% do assets.addCss('theme://fonts/destroy.css') %}
 

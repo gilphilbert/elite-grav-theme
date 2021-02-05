@@ -6,8 +6,17 @@
 html
   scroll-behavior: smooth
 
+body.has-background-black
+    background-color: #1a1a1a!important
+
+body, button, input, select, textarea
+    font-family: "Noto Sans", BlinkMacSystemFont, -apple-system, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Fira Sans", "Droid Sans", "Helvetica Neue", Helvetica, Arial, sans-serif
+
 p
   padding-bottom: 25px
+
+.title, .subtitle
+    color: inherit
 
 .title
   font-family: 'Muli',BlinkMacSystemFont,-apple-system,"Segoe UI",Roboto,Oxygen,Ubuntu,Cantarell,"Fira Sans","Droid Sans","Helvetica Neue",Helvetica,Arial,sans-serif
@@ -22,22 +31,21 @@ p
     background: $primary
     content: ''
     display: block
-.has-background-primary .title:after
-  background: $white
 .has-text-centered .title:after
   left: calc(50% - 20px)
+.has-text-right .title:after
+    left: calc(100% - 40px)
 
 .subtitle
   font-size: 100%
 
 .button
   font-size: 115%
+  &.is-small
+    font-size: 0.9rem
 
 section
   padding: 40px 0
-
-footer 
-  padding: 60px 0 30px 0
 
 /* HELPERS */
 .has-position-relative
@@ -57,6 +65,64 @@ footer
     z-index: 1
 .z-index-2
   z-index: 2
+
+.has-background-black
+  color: white!important
+  .title
+    color: white!important
+    &:after
+      background-color: #F45200
+  .box
+    border-radius: 0
+    background-color: transparent
+    color: white
+    .input
+      background-color: transparent
+      border-color: #777
+      color: #999
+      transition: all 0.3s ease
+      border-radius: 7px
+      border-width: 2px
+      &:hover
+        border-color: #777
+        background-color: #191919
+        transition: all 0.3s ease
+      &:focus
+        border-color: #F45200
+      &::placeholder
+        color: #444
+        opacity: 1
+
+.has-background-primary
+  color: white!important
+  .title
+    color: white!important
+    &:after
+      background: $white
+
+.has-background-white
+  color: #0a0a0a!important
+  .title
+    color: #0a0a0a!important
+    &:after
+      background-color: #F45200
+
+.brand-icon
+  width: 35px
+  height: 35px
+  display: inline-block
+  background-color: #F45200
+  -webkit-mask-size: cover
+  mask-size: cover
+
+.has-half-image
+  background-position: left
+  &.image-right
+    background-position: right
+
+p.has-no-padding,
+div.has-no-p-padding p
+  padding-bottom: 0
 
 
 /* SPECIFIC STYLING */
@@ -79,6 +145,22 @@ footer
     font-family: 'Muli',BlinkMacSystemFont,-apple-system,"Segoe UI",Roboto,Oxygen,Ubuntu,Cantarell,"Fira Sans","Droid Sans","Helvetica Neue",Helvetica,Arial,sans-serif
   .navbar-dropdown .navbar-item
     font-size: 1em
+  &.is-dark  
+    .navbar-end, .navbar-start
+      .navbar-link.is-active,
+      .navbar-link:focus,
+      .navbar-link:hover,
+      &>a.navbar-item.is-active,
+      &>a.navbar-item:focus,
+      &>a.navbar-item:hover
+        background: transparent
+        color: #F45200
+    .navbar-item.has-dropdown.is-active .navbar-link,
+    .navbar-item.has-dropdown:focus .navbar-link,
+    .navbar-item.has-dropdown:hover .navbar-link
+      background: transparent
+      color: #F45200
+
 
 section
   &.has-half-image 
@@ -146,20 +228,93 @@ section
       right: 0
       left: auto
 
+/* stuff for people page */
+.video-container,
+#person-modal figure
+    position: relative
+    padding-bottom: 56.25%
+
+.video-container
+  &.is-50
+    margin: 0 25%
+    padding-bottom: 28%
+  embed, #person-modal img
+    position: absolute
+    top: 0
+    left: 0
+    width: 100%
+    height: 100%
+
+.team-member
+  img
+    border-radius: 1000px
+    width: 100%
+    border: 5px solid white
+
+.person
+  cursor: pointer
+  .subtitle
+    margin-top: -24px
+    opacity: 0.7
+
+#person-modal
+  .text-container
+    padding: 8px 20px 20px 20px
+  figure
+    width: 100%
+  img
+    position: absolute
+    width: 100%
+    object-fit: cover
+
 footer
+  padding: 60px 0 30px 0
+  .title
+    margin-top: 10px
+    font-size: 1.7rem
   .field
     &.has-addons
       justify-content: center
       margin-bottom: 80px
 
-    .control input
-      background-color: #4C4C4C
-      border: none
-      color: white
-      font-size: 115%
-
+    .control
+      input
+        background-color: #4C4C4C
+        border: none
+        color: white
+        font-size: 115%
+      input.button
+        background-color: #F45200
 
 h3.title 
   letter-spacing: 0
   font-weight: 400
   font-size: 28px
+
+
+/* testimonial formatting */
+
+.modular-testimonial
+  .box
+    border-radius: 0
+    p
+      font-size: 15px
+      padding: 0
+      margin: 8px 0 0 0
+    figure img
+      height: 175px
+      width: 300px
+      object-fit: cover
+    .text
+    display: -webkit-box
+    /* autoprefixer: off */
+    -webkit-box-orient: vertical
+    /* autoprefixer: on */
+    overflow: hidden
+    text-overflow: ellipsis
+    transition: all 0.3s ease
+  .text.clip
+    -webkit-line-clamp: 6
+    transition: all 0.3s ease
+  .button
+    margin: 8px
