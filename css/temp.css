@@ -29,6 +29,11 @@ div.has-no-p-padding p {
     padding-bottom: 0;
 }
 
+footer .title {
+    margin-top: 10px;
+    font-size: 1.7rem;
+}
+
 /* testimonial formatting */
 figure.testimonial img {
     height: 175px;
@@ -153,11 +158,26 @@ figure.testimonial img {
     background-color: #F45200;
     -webkit-mask-size: cover;
     mask-size: cover;
-    
-    -webkit-mask: url(https://s3-us-west-2.amazonaws.com/s.cdpn.io/18515/heart.svg) no-repeat 50% 50%;
-    mask: url(https://s3-us-west-2.amazonaws.com/s.cdpn.io/18515/heart.svg) no-repeat 50% 50%;
 }
 
 .box {
-    border-radius: 0
+    border-radius: 0;
+    background-color: #1a1a1a;
+    color: white;
 }
+
+.input {
+    background-color: #777;
+    border-color: #777;
+    color: #0a0a0a;
+    transition: all 0.3s ease;
+}
+.input:hover, .input:focus {
+    background-color: #999;
+    border-color: #999;
+    transition: all 0.3s ease;
+}
+.input::placeholder {
+    color: #444;
+    opacity: 1;
+  }
